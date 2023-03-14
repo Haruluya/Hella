@@ -11,14 +11,14 @@ void Hella::InitCore() {
 
 	Hella::Log::Init();
 
-	HELLA_CORE_INFO("{}",
+	HELLA_CORE_WARN("{}",
 		Util::LetStrConsoleCenter("HELLA CORE INIT", '-')
 		);
 }
 
 void Hella::ShutdownCore()
 {
-	HELLA_CORE_INFO("{}",
+	HELLA_CORE_WARN("{}",
 		Util::LetStrConsoleCenter("HELLA CORE SHUNTDOWN", '-')
 	);
 	Hella::Log::Shutdown();

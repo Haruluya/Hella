@@ -10,6 +10,10 @@
 #include"implement/linkList/SqList.h"
 #include"implement/linkList/SinglyLinkedList.h"
 
+#include"implement/stack/SqStack.h"
+
+#include"implement/queue/LinkQueue.h"
+
 namespace Hella {
 	void InitCore();
 	void ShutdownCore();

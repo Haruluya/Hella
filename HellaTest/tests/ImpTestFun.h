@@ -22,17 +22,3 @@ namespace HellaTS {
 
 
 
-namespace HellaTS {
-
-
-	/*
-		¡¥±Ì≤‚ ‘¿‡°£
-	*/
-	class ListLinkTestFun : public ImpTestFun
-	{
-	public:
-		virtual void TestImpFunction() override;
-	};
-
-
-}

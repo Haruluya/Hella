@@ -6,11 +6,15 @@
 
 
 //failed.
-#define HELLA_STATUS_FAILED(sta) (sta != Hella::Status::HELLA_OK && sta != Hella::Status::HELLA_TRUE )
+#define HELLA_STATUS_FAILED(sta) (\
+    sta != Hella::Status::HELLA_OK && \
+    sta != Hella::Status::HELLA_TRUE &&\
+    sta != Hella::Status::HELLA_FALSE\
+    )
 
-#define HELLA_STATUS_JUDGE(x)                                              \
-{                                                                                                           \
-    std::string wfn = (__FILE__);                       \
+#define HELLA_STATUS_JUDGE(x) \
+{                                 \
+    std::string wfn = (__FILE__);  \
     if(HELLA_STATUS_FAILED(x)) { throw Hella::HellaException(x, wfn, __LINE__); } \
 }
 

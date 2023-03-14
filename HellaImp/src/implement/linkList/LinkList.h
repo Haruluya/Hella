@@ -14,7 +14,7 @@ namespace Hella {
 	class LinkList : public DataStruct
 	{
 	public:
-		LinkList() { m_Length = 0; };
+		LinkList() { };
 		virtual ~LinkList() {};
 		virtual Status Init() = 0;
 		virtual Status Destroy() = 0;
@@ -30,7 +30,7 @@ namespace Hella {
 		virtual Status Traverse(void (*visit)(ElemType& e)) = 0;
 		virtual std::string DataToString();
 	protected:
-		int m_Length;
+
 	};
 }
 

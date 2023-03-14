@@ -6,8 +6,8 @@
 	@function:The implement of sequence table.
 */
 
-#define LIST_INIT_SIZE 50
-#define LISTINCREMENT 50
+#define HELLA_LIST_INIT_SIZE 50
+#define HELLA_LIST_INCREMENT 50
 
 //À≥–Ú±Ì∂®“Â°£
 namespace Hella {
@@ -45,6 +45,7 @@ namespace Hella {
 
 
 	private:
+		int m_Length;
 		int m_ListSize{};
 		ElemType* m_Elem{};
 

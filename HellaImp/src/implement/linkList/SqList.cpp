@@ -8,11 +8,11 @@ namespace Hella {
 	Status SqList::Init()
 	{
 		//分配内存并检查。
-		m_Elem = HELLA_MALLOC(LIST_INIT_SIZE, ElemType);
+		m_Elem = HELLA_MALLOC(HELLA_LIST_INIT_SIZE, ElemType);
 		HELLA_ASSERT_MEMORY_MALLOC(m_Elem);
 
 		m_Length = 0;
-		m_ListSize = LIST_INIT_SIZE;
+		m_ListSize = HELLA_LIST_INIT_SIZE;
 
 		return Status::HELLA_OK;
 	}
@@ -98,10 +98,10 @@ namespace Hella {
 		ElemType* p, *q;
 
 		if (m_Length >= m_ListSize) {
-			ElemType* newBase = (ElemType*)HELLA_REALLOC(m_Elem, m_Length + LISTINCREMENT);
+			ElemType* newBase = (ElemType*)HELLA_REALLOC(m_Elem, m_Length + HELLA_LIST_INCREMENT);
 			HELLA_ASSERT_MEMORY_MALLOC(newBase);
 			m_Elem = newBase;
-			m_ListSize += LISTINCREMENT;
+			m_ListSize += HELLA_LIST_INCREMENT;
 		}
 
 		p = &m_Elem[i - 1];

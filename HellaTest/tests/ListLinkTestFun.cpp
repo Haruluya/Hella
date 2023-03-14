@@ -1,15 +1,9 @@
-#include "ImpTestFun.h"
+#include"ListLinkTestFun.h"
 
-
-/*
-	@author:Haruluya.
-*/
 namespace HellaTS {
-
-	//&& sta != Hella::Status::HELLA_TRUE
-	void HellaTS::ListLinkTestFun::TestImpFunction()
+	void ListLinkTestFun::TestImpFunction()
 	{
-		auto linklist = CREATE_TEST_IMP(CURRENT_TEST_IMP);
+		auto linklist = CREATE_TEST_IMP(CURRENT_TEST_LINK_LIST_IMP);
 
 		//Init and insert.
 		// ³õÊ¼»¯Îª[1,...99].
@@ -27,13 +21,13 @@ namespace HellaTS {
 		Hella::ElemType cur, pre, next;
 		int index;
 		HELLA_STATUS_JUDGE(linklist->LocateElem(toFindEl,
-			[](Hella::ElemType e1, Hella::ElemType e2) {return e1 == e2; }, 
+			[](Hella::ElemType e1, Hella::ElemType e2) {return e1 == e2; },
 			index));
 		HELLA_STATUS_JUDGE(linklist->GetElem(index, cur));
 		HELLA_STATUS_JUDGE(linklist->PriorElem(cur, pre));
 		HELLA_STATUS_JUDGE(linklist->NextElem(cur, next));
 		HELLA_CLIENT_INFO("L&P&N:\nCurrend element:{0}\nprior element: {1} \nnest element: {2} \n",
-			cur,pre,next);
+			cur, pre, next);
 
 
 		//Traverse and delete.
@@ -56,8 +50,8 @@ namespace HellaTS {
 
 		HELLA_STATUS_JUDGE(linklist->Traverse([](Hella::ElemType& e) {e *= 2; }));
 
-		HELLA_CLIENT_INFO("T&D:\nDeleted data: {0} \nAfter visited: {1}\n ", 
-				deleteElStr, linklist->DataToString());
+		HELLA_CLIENT_INFO("T&D:\nDeleted data: {0} \nAfter visited: {1}\n ",
+			deleteElStr, linklist->DataToString());
 
 
 		//clear and destory.
@@ -70,6 +64,5 @@ namespace HellaTS {
 		HELLA_STATUS_JUDGE(linklist->Destroy());
 
 	}
-
 
 }
