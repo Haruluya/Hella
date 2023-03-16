@@ -1,9 +1,11 @@
 #pragma once
 
-#include "tests/TestConfig.h"
-#include "tests/ImpTestFun.h"
+#include "TestConfig.h"
 
-
+#include "tests/ListLinkTestFun.h"
+#include "tests/StackTestFun.h"
+#include "tests/QueueTestFun.h"
+#include "tests/BiTreeTestFun.h"
 
 
 /*
