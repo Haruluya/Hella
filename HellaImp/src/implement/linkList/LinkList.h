@@ -11,6 +11,7 @@
 	@function:The abstrcation of linklist.
 */
 namespace Hella {
+	template <typename ElemType>
 	class LinkList : public DataStruct
 	{
 	public:
@@ -34,3 +35,16 @@ namespace Hella {
 	};
 }
 
+template <typename ElemType>
+std::string Hella::LinkList<ElemType>::DataToString()
+{
+	std::string data = "[ ";
+	ElemType e; int len = 0;
+	Length(len);
+	for (int i = 1; i <= len; i++) {
+		GetElem(i, e);
+		data += std::to_string(e) + ",";
+	}
+	data += " ]";
+	return data;
+}

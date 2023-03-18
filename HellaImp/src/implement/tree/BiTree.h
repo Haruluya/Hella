@@ -3,7 +3,8 @@
 #include "Tree.h"
 
 namespace Hella {
-	class BiTree : public Tree
+	template <typename ElemType>
+	class BiTree : public Tree<ElemType>
 	{
 	public:
 		virtual Status Init() = 0;
@@ -17,8 +18,7 @@ namespace Hella {
 		virtual Status Root(ElemType& e) = 0;
 		virtual Status Parent(ElemType e, ElemType& parent) = 0;
 
-		virtual Status CreateByLev(ElemType* e, ElemType format) = 0;
-		virtual Status CreateByPre(ElemType* e, ElemType format, int index) = 0;
+		virtual Status Create(ElemType* e, ElemType format, ElemType type) = 0;
 
 		virtual Status LeftChild(ElemType e, ElemType& lchild) = 0;
 		virtual Status RightChild(ElemType e, ElemType& rchild) = 0;
@@ -36,3 +36,20 @@ namespace Hella {
 
 	};
 }
+
+
+template <typename ElemType>
+std::string Hella::BiTree<ElemType>::DataToString()
+{
+	std::string data = "[ ";
+
+	int len, e;
+	Length(len);
+	for (int i = 0; i < len; i++) {
+		GetElemByIndex(i, e);
+		data += std::to_string(e) + ",";
+	}
+	data += " ]";
+	return data;
+}
+

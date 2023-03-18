@@ -8,6 +8,7 @@ typedef struct Position {
 }Position;
 
 namespace Hella {
+	template <typename ElemType>
 	class Tree :public DataStruct
 	{
 		virtual Status Init() = 0;

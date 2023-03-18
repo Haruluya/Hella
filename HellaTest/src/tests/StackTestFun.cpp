@@ -10,15 +10,15 @@ namespace HellaTS {
 		for (int i = 1; i < 100; i++) {
 			HELLA_STATUS_JUDGE(stack->Push(i));
 		}
-		int len; Hella::ElemType top;
+		int len; ElemType top;
 		stack->Length(len);
 		stack->GetTop(top);
 		HELLA_CLIENT_INFO("INIT STACK:\n{}\nLENGTH:\n{}\nTOP:\n{}",
 			stack->DataToString(), len, top);
 
 		////pop.
-		Hella::ElemType popValue;
-		std::vector<Hella::ElemType> popValueVector;
+		ElemType popValue;
+		std::vector<ElemType> popValueVector;
 		std::string deleteElStr;
 		for (int j = 1; j < 50; j++) {
 			HELLA_STATUS_JUDGE(stack->Pop(popValue));
@@ -27,7 +27,7 @@ namespace HellaTS {
 
 		deleteElStr += "[ ";
 		std::for_each(popValueVector.begin(), popValueVector.end(),
-			[&deleteElStr](Hella::ElemType e) {deleteElStr += std::to_string(e) + ","; }
+			[&deleteElStr](ElemType e) {deleteElStr += std::to_string(e) + ","; }
 		);
 		deleteElStr += " ]";
 
@@ -36,7 +36,7 @@ namespace HellaTS {
 
 
 		//Traverse.
-		HELLA_STATUS_JUDGE(stack->Traverse([](Hella::ElemType& e) {e *= 2; }));
+		HELLA_STATUS_JUDGE(stack->Traverse([](ElemType& e) {e *= 2; }));
 		HELLA_CLIENT_INFO("T&D:\nAfter traverse:\n {0}\n",
 			stack->DataToString());
 

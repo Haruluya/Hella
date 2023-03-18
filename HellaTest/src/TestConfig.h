@@ -22,12 +22,15 @@
 #define CURRENT_TEST HellaTS::BiTreeTestFun							    //|
 //________________________________________________________________________|
 
+
+typedef int ElemType;
+
 //________________________________________________________________________
 //configuration of each test.											  |
-#define CURRENT_TEST_LINK_LIST_IMP Hella::SqList
-#define CURRENT_TEST_STACK_IMP Hella::SqStack
-#define CURRENT_TEST_QUEUE_IMP Hella::LinkQueue
-#define CURRENT_TEST_BI_TREE_IMP Hella::SqBiTree
+#define CURRENT_TEST_LINK_LIST_IMP Hella::SqList<ElemType>
+#define CURRENT_TEST_STACK_IMP Hella::SqStack<ElemType>
+#define CURRENT_TEST_QUEUE_IMP Hella::LinkQueue<ElemType>
+#define CURRENT_TEST_BI_TREE_IMP Hella::BiLinkBiTree<ElemType>
 //________________________________________________________________________|
 
 

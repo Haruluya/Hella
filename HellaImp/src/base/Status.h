@@ -42,5 +42,5 @@ namespace Hella {
 
 
 
-	typedef int ElemType;
+	//typedef int ElemType;
 }

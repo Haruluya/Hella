@@ -10,15 +10,15 @@ namespace HellaTS {
 		for (int i = 1; i < 100; i++) {
 			HELLA_STATUS_JUDGE(queue->EnQueue(i));
 		}
-		int len; Hella::ElemType top;
+		int len; ElemType top;
 		queue->Length(len);
 		queue->GetHead(top);
 		HELLA_CLIENT_INFO("INIT QUEUE:\n{}\nLENGTH:{}\HEAD:{}",
 			queue->DataToString(), len, top);
 
 		////Dequeue.
-		Hella::ElemType dequeueValue;
-		std::vector<Hella::ElemType> dequeueValueVector;
+		ElemType dequeueValue;
+		std::vector<ElemType> dequeueValueVector;
 		std::string deleteElStr;
 		for (int j = 1; j < 50; j++) {
 			HELLA_STATUS_JUDGE(queue->DeQueue(dequeueValue));
@@ -27,7 +27,7 @@ namespace HellaTS {
 
 		deleteElStr += "[ ";
 		std::for_each(dequeueValueVector.begin(), dequeueValueVector.end(),
-			[&deleteElStr](Hella::ElemType e) {deleteElStr += std::to_string(e) + ","; }
+			[&deleteElStr](ElemType e) {deleteElStr += std::to_string(e) + ","; }
 		);
 		deleteElStr += " ]";
 
@@ -36,7 +36,7 @@ namespace HellaTS {
 
 
 		//Traverse.
-		HELLA_STATUS_JUDGE(queue->Traverse([](Hella::ElemType& e) {e *= 2; }));
+		HELLA_STATUS_JUDGE(queue->Traverse([](ElemType& e) {e *= 2; }));
 		HELLA_CLIENT_INFO("T&D:\nAfter traverse: {0}\n",
 			queue->DataToString());
 

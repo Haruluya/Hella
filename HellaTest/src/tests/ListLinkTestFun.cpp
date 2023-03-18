@@ -1,5 +1,6 @@
 #include"ListLinkTestFun.h"
 
+
 namespace HellaTS {
 	void ListLinkTestFun::TestImpFunction()
 	{
@@ -16,12 +17,12 @@ namespace HellaTS {
 
 		//locate , pre and next.
 		//list中找到toFindEl并找前驱后驱。
-		Hella::ElemType toFindEl = 3;
+		ElemType toFindEl = 3;
 
-		Hella::ElemType cur, pre, next;
+		ElemType cur, pre, next;
 		int index;
 		HELLA_STATUS_JUDGE(linklist->LocateElem(toFindEl,
-			[](Hella::ElemType e1, Hella::ElemType e2) {return e1 == e2; },
+			[](ElemType e1, ElemType e2) {return e1 == e2; },
 			index));
 		HELLA_STATUS_JUDGE(linklist->GetElem(index, cur));
 		HELLA_STATUS_JUDGE(linklist->PriorElem(cur, pre));
@@ -32,8 +33,8 @@ namespace HellaTS {
 
 		//Traverse and delete.
 		//删除前49项，然后全部乘2.
-		Hella::ElemType e;
-		std::vector<Hella::ElemType> ev;
+		ElemType e;
+		std::vector<ElemType> ev;
 		std::string deleteElStr;
 
 
@@ -44,11 +45,11 @@ namespace HellaTS {
 
 		deleteElStr += "[ ";
 		std::for_each(ev.begin(), ev.end(),
-			[&deleteElStr](Hella::ElemType e) {deleteElStr += std::to_string(e) + ","; }
+			[&deleteElStr](ElemType e) {deleteElStr += std::to_string(e) + ","; }
 		);
 		deleteElStr += " ]";
 
-		HELLA_STATUS_JUDGE(linklist->Traverse([](Hella::ElemType& e) {e *= 2; }));
+		HELLA_STATUS_JUDGE(linklist->Traverse([](ElemType& e) {e *= 2; }));
 
 		HELLA_CLIENT_INFO("T&D:\nDeleted data: {0} \nAfter visited: {1}\n ",
 			deleteElStr, linklist->DataToString());

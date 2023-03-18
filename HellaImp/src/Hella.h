@@ -21,6 +21,7 @@
 
 //Tree.
 #include "implement/tree/SqBiTree.h"
+#include "implement/tree/BiLinkBiTree.h"
 
 //Graph.
 
